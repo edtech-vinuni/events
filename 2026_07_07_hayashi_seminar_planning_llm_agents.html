@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Seminar: Planning and LLM Agents - VinUniversity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #001a4d 30%, #003d99 60%, #0052cc 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .header::before {
+            content: "✓";
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .title-section h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .title-section .planning {
+            color: #ffffff;
+        }
+
+        .title-section .llm {
+            color: #0066ff;
+            display: block;
+        }
+
+        .title-section .subtitle {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            border-color: #0066ff;
+            background: rgba(0, 102, 255, 0.1);
+        }
+
+        .info-box .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .info-box .value {
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .speaker-card {
+            background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .speaker-image {
+            width: 100%;
+            max-width: 280px;
+            height: 280px;
+            margin: 0 auto 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .speaker-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .speaker-title {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .speaker-affiliation {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #ffffff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-section {
+            background: rgba(0, 102, 255, 0.15);
+            border: 2px solid #0066ff;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .teams-link {
+            display: inline-block;
+            background: #0066ff;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid #0066ff;
+            cursor: pointer;
+        }
+
+        .teams-link:hover {
+            background: rgba(0, 102, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .teams-link::before {
+            content: "🔗 ";
+            margin-right: 8px;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .main-content section {
+            margin-bottom: 40px;
+        }
+
+        .main-content section:last-child {
+            margin-bottom: 0;
+        }
+
+        .main-content h2 {
+            font-size: 24px;
+            color: #0066ff;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(0, 102, 255, 0.3);
+            display: inline-block;
+        }
+
+        .main-content p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .main-content ul {
+            margin-left: 25px;
+            margin-top: 12px;
+        }
+
+        .main-content li {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .abstract-box {
+            background: rgba(0, 102, 255, 0.1);
+            border-left: 4px solid #0066ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .poster-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .poster-section h3 {
+            font-size: 18px;
+            color: #0066ff;
+            margin-bottom: 20px;
+        }
+
+        .poster-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 102, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .title-section h1 {
+                font-size: 42px;
+            }
+
+            .main-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .title-section h1 {
+                font-size: 32px;
+            }
+
+            .info-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .speaker-card {
+                padding: 20px;
+            }
+
+            .speaker-image {
+                max-width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .main-content {
+                background: white;
+                border: 1px solid #ccc;
+                color: #000;
+            }
+
+            .main-content p,
+            .main-content li {
+                color: #000;
+            }
+
+            .main-content h2 {
+                color: #003d99;
+            }
+
+            .info-box {
+                border-color: #ccc;
+                background: #f5f5f5;
+                color: #000;
+            }
+
+            .info-box .label,
+            .info-box .value {
+                color: #000;
+            }
+
+            .cta-section {
+                background: #f0f4ff;
+                border-color: #003d99;
+            }
+
+            .teams-link {
+                background: #003d99;
+                color: white;
+            }
+
+            .speaker-card {
+                background: #f5f5f5;
+                border-color: #ccc;
+                color: #000;
+            }
+
+            .speaker-name,
+            .speaker-title {
+                color: #000;
+            }
+
+            .speaker-affiliation {
+                border-color: #ccc;
+                background: white;
+                color: #000;
+            }
+
+            header {
+                color: #000;
+            }
+
+            footer {
+                color: #666;
+                border-color: #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            VINUNIVERSITY | College of Engineering and Computer Science
+        </header>
+
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="title-section">
+                    <h1>
+                        <span class="planning">PLANNING</span>
+                        <span class="llm">LLM AGENTS</span>
+                    </h1>
+                    <p class="subtitle">TOWARD COLLABORATIVE DECISION SUPPORT</p>
+                </div>
+
+                <div class="info-boxes">
+                    <div class="info-box">
+                        <div class="label">📅 Date</div>
+                        <div class="value">Tuesday, July 7, 2026</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="label">🕐 Time</div>
+                        <div class="value">2:00 PM – 4:00 PM VNT</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="label">📍 Venue</div>
+                        <div class="value">C305, Building C, VinUniversity</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="label">👤 Speaker</div>
+                        <div class="value">Prof. Hisashi Hayashi</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Hisashi Hayashi</div>
+                    <div class="speaker-title">Advanced Institute of Industrial Technology, Tokyo, Japan</div>
+                    <div class="speaker-affiliation">
+                        AIIT | Research Focus: Agents & Artificial Intelligence
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p class="cta-text">Join us online or in person</p>
+            <a href="https://teams.microsoft.com/meet/45706789881478?p=Iw3yAxLrADhbtVCxkL" class="teams-link" target="_blank">Join MS Teams Meeting</a>
+        </div>
+
+        <div class="main-content">
+            <section>
+                <h2>About This Seminar</h2>
+                <p>We are pleased to invite you to this research seminar featuring Prof. Hisashi Hayashi from the Advanced Institute of Industrial Technology (AIIT) in Tokyo, Japan. This seminar explores the intersection of AI planning and large language models in creating collaborative decision support systems.</p>
+            </section>
+
+            <section>
+                <h2>Abstract</h2>
+                <div class="abstract-box">
+                    <p>Recent advances in large language models have opened new possibilities for agent-based decision support, where autonomous agents and multi-agent systems can reason, communicate, simulate possible situations, and support human decision making.</p>
+
+                    <p style="margin-top: 15px;">This talk introduces recent research activities on AI planning, multi-agent simulation, and LLM-based agents. It first provides a brief overview of agents, multi-agent systems, and LLM agents. It then discusses AI planning as a core technology for autonomous decision making, including examples from robot action planning and planning under legal and ethical constraints.</p>
+
+                    <p style="margin-top: 15px;">The talk then presents two case studies of LLM-based agents: an LLM-based framework for risk scenario generation and mitigation planning for AI systems, and a multi-agent conversation simulation approach for evacuation decision-making.</p>
+
+                    <p style="margin-top: 15px;">Through these case studies, the talk discusses how planning techniques, multi-agent simulation, and LLM agents can contribute to explainable and human-centered decision support in complex social and organizational contexts.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>About the Speaker</h2>
+                <p><strong>Prof. Hisashi Hayashi</strong> is a professor at the Advanced Institute of Industrial Technology (AIIT) in Tokyo, Japan. His primary research interests include agents and artificial intelligence.</p>
+
+                <p style="margin-top: 15px;"><strong>Education:</strong></p>
+                <ul>
+                    <li>B.E. from Waseda University, Tokyo, Japan</li>
+                    <li>M.Sc. and Ph.D. from Imperial College London, U.K.</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>Professional Experience:</strong></p>
+                <ul>
+                    <li>1998–1999: Research Assistant at Imperial College London</li>
+                    <li>2000–2017: Researcher at Toshiba R&D Center</li>
+                    <li>2017–Present: Professor at AIIT</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>Professional Memberships:</strong> IPSJ, IEICE, JSAI, JSSST, IIAI, KES, INSTICC, AAAI, ACM</p>
+            </section>
+
+            <section>
+                <h2>How to Participate</h2>
+                <p><strong>In-Person:</strong> Room C305, Building C, VinUniversity</p>
+                <p style="margin-top: 12px;"><strong>Online:</strong> <a href="https://teams.microsoft.com/meet/45706789881478?p=Iw3yAxLrADhbtVCxkL" style="color: #0066ff; text-decoration: underline; font-weight: 600;">Click here to join the MS Teams meeting</a></p>
+                <p style="margin-top: 15px; font-style: italic; color: rgba(255, 255, 255, 0.8);">We warmly welcome your participation in the seminar. Please feel free to share this invitation with colleagues who may find the topic of interest.</p>
+            </section>
+
+            <div class="poster-section">
+                <h3>Event Poster</h3>
+                <img src="hayashi_poster.png" alt="Seminar Poster" class="poster-image">
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>VinUniversity | College of Engineering and Computer Science</strong></p>
+            <p>Research Seminar: Planning and LLM Agents - Toward Collaborative Decision Support</p>
+            <p style="margin-top: 15px; font-size: 12px;">July 7, 2026 | For online participation: <a href="https://teams.microsoft.com/meet/45706789881478?p=Iw3yAxLrADhbtVCxkL" style="color: #0066ff;">MS Teams Meeting Link</a></p>
+        </footer>
+    </div>
+</body>
+</html>
