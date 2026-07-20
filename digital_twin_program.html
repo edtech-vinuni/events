@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin & Trustworthy AI | VinUniversity Mobility Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* AUS Colors (Australian Gold & Blue) */
+            --aus-gold: #FFB81C;
+            --aus-blue: #003DA5;
+            /* Vietnam Colors (Red & Yellow) */
+            --vn-red: #CE1126;
+            --vn-yellow: #FFDE00;
+            /* Neutral */
+            --dark-bg: #0f1419;
+            --card-bg: #1a1f2e;
+            --text-light: #e8eef5;
+            --text-muted: #a0aac4;
+            --accent-green: #00d99f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--aus-blue) 0%, var(--vn-red) 100%);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-yellow));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark-bg);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-yellow));
+            color: var(--dark-bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--aus-gold);
+            color: var(--aus-gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 184, 28, 0.1);
+        }
+
+        /* Section */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--aus-gold), var(--vn-red));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--aus-gold);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--aus-gold);
+        }
+
+        .highlight-box h4 {
+            color: var(--vn-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Themes Section */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .theme-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-top: 4px solid var(--aus-gold);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255, 184, 28, 0.1), rgba(206, 17, 38, 0.1));
+            border-radius: 0 0 0 100px;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 184, 28, 0.2);
+        }
+
+        .theme-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .theme-card:nth-child(1) h3 { color: var(--aus-gold); }
+        .theme-card:nth-child(2) h3 { color: var(--vn-red); }
+        .theme-card:nth-child(3) h3 { color: var(--accent-green); }
+
+        .theme-card p {
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Learning Approach */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .approach-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .approach-item:hover {
+            border-color: var(--aus-gold);
+            background: rgba(255, 184, 28, 0.05);
+        }
+
+        .approach-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .approach-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .approach-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Program Structure */
+        .structure-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--aus-gold);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(2) { border-left-color: var(--vn-red); }
+        .timeline-item:nth-child(3) { border-left-color: var(--accent-green); }
+        .timeline-item:nth-child(4) { border-left-color: var(--vn-yellow); }
+
+        .timeline-week {
+            font-size: 0.8rem;
+            color: var(--aus-gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Objectives */
+        .objectives-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .objective-item {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--aus-gold);
+        }
+
+        .objective-number {
+            min-width: 50px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .objective-content h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Assessment */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .assessment-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--aus-gold);
+        }
+
+        .assessment-percentage {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .assessment-card h4 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .assessment-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Faculty */
+        .faculty-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--aus-gold);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .faculty-name {
+            font-size: 1.5rem;
+            color: var(--aus-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-title {
+            color: var(--vn-red);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .faculty-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(0, 61, 165, 0.1), rgba(206, 17, 38, 0.1));
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--aus-gold);
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--aus-gold), var(--vn-yellow));
+            color: var(--dark-bg);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-top: 2px solid var(--aus-gold);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon">◆</div>
+                <span>Digital Twin Program</span>
+            </a>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#themes">Themes</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#structure">Structure</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Digital Twin & Trustworthy AI</h1>
+        <p>An international mobility program exploring the intersection of advanced technology, system optimization, and cultural understanding in Vietnam</p>
+        <div class="cta-buttons">
+            <a href="#overview" class="btn btn-primary">Learn More</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <h2>Program Overview</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Bridging Technology and Culture</h3>
+                <p>This international mobility program brings together students from diverse backgrounds to explore how digital systems can be designed with both technical excellence and cultural sensitivity.</p>
+                <p>Through a combination of academic engagement, field observation, and collaborative project work, participants develop a deeper understanding of systems thinking and responsible technology design.</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-box">
+                        <h4>27 Days</h4>
+                        <p>Intensive four-week program combining theory and practice</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Interdisciplinary</h4>
+                        <p>Students from engineering, design, social sciences, and business</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Field-Based</h4>
+                        <p>Direct observation and immersion in Vietnamese contexts</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h4>Project-Driven</h4>
+                        <p>Collaborative development of real-world solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(255, 184, 28, 0.1), rgba(206, 17, 38, 0.1)); border-radius: 12px; padding: 2rem; height: 400px; display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
+                    <p style="color: var(--text-muted);">Vietnam as a Living Laboratory</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section id="themes">
+        <h2>Three Interconnected Themes</h2>
+        <div class="themes-grid">
+            <div class="theme-card">
+                <h3>Understanding Systems</h3>
+                <p>How we model, represent, and optimize complex systems. Exploring the technical foundations of digital twins and optimization algorithms.</p>
+            </div>
+            <div class="theme-card">
+                <h3>Exploring Contexts</h3>
+                <p>How cultural, social, and economic factors shape technology adoption. Understanding Vietnamese communities and diverse perspectives.</p>
+            </div>
+            <div class="theme-card">
+                <h3>Building Solutions</h3>
+                <p>How to create systems that are both technically sound and socially responsible. Designing trustworthy AI aligned with local values.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Approach -->
+    <section id="approach">
+        <h2>Learning Through Doing</h2>
+        <div class="approach-grid">
+            <div class="approach-item">
+                <div class="approach-icon">📚</div>
+                <h4>Engage with Theory</h4>
+                <p>Lectures and discussions with faculty and industry practitioners</p>
+            </div>
+            <div class="approach-item">
+                <div class="approach-icon">🔍</div>
+                <h4>Observe in Practice</h4>
+                <p>Field visits to diverse settings from manufacturing to traditional villages</p>
+            </div>
+            <div class="approach-item">
+                <div class="approach-icon">🤝</div>
+                <h4>Collaborate on Projects</h4>
+                <p>Work with peers from different disciplines and backgrounds</p>
+            </div>
+            <div class="approach-item">
+                <div class="approach-icon">💭</div>
+                <h4>Reflect Critically</h4>
+                <p>Connect technical concepts to real-world contexts and implications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure -->
+    <section id="structure">
+        <h2>Program Structure</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">The program spans four weeks and balances academic engagement with field observation and cultural immersion.</p>
+        <div class="structure-timeline">
+            <div class="timeline-item">
+                <div class="timeline-week">Week 1</div>
+                <h4>Orientation & Foundations</h4>
+                <p>Foundational concepts, initial field observations, and cultural immersion</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 2</div>
+                <h4>Deepening Understanding</h4>
+                <p>Technical depth, extended field visits, and project development</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 3</div>
+                <h4>Advanced Topics</h4>
+                <p>Industry engagement, intensive project work, and synthesis</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-week">Week 4</div>
+                <h4>Finalization & Closure</h4>
+                <p>Project completion, presentations, and program reflection</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section id="objectives">
+        <h2>Learning Objectives</h2>
+        <div class="objectives-list">
+            <div class="objective-item">
+                <div class="objective-number">1</div>
+                <div class="objective-content">
+                    <h4>Conceptual Understanding</h4>
+                    <p>Grasp how systems can be represented, analyzed, and optimized with attention to both technical and human dimensions</p>
+                </div>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">2</div>
+                <div class="objective-content">
+                    <h4>Cultural Awareness</h4>
+                    <p>Develop understanding of how technology interacts with diverse communities and cultural contexts</p>
+                </div>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">3</div>
+                <div class="objective-content">
+                    <h4>Practical Skills</h4>
+                    <p>Build competence in collaborative problem-solving and project development in real-world settings</p>
+                </div>
+            </div>
+            <div class="objective-item">
+                <div class="objective-number">4</div>
+                <div class="objective-content">
+                    <h4>Critical Perspective</h4>
+                    <p>Develop informed perspective on ethical and social dimensions of technology design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment -->
+    <section>
+        <h2>Assessment Framework</h2>
+        <div class="assessment-grid">
+            <div class="assessment-card">
+                <div class="assessment-percentage">20%</div>
+                <h4>Engagement</h4>
+                <p>Active participation in all program activities and discussions</p>
+            </div>
+            <div class="assessment-card">
+                <div class="assessment-percentage">60%</div>
+                <h4>Project Work</h4>
+                <p>Collaborative development integrating technical and contextual learning</p>
+            </div>
+            <div class="assessment-card">
+                <div class="assessment-percentage">20%</div>
+                <h4>Final Presentation</h4>
+                <p>Communication of insights and solutions to broader audience</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="contact-section">
+            <h3>Get in Touch</h3>
+            <p>We welcome inquiries about the program, collaboration opportunities, and participation.</p>
+            <a href="mailto:thanh.nh6@vinuni.edu.vn" class="contact-email">Contact Program</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-icon" style="width: 30px; height: 30px;">◆</div>
+            <span>Digital Twin & Trustworthy AI Program</span>
+        </div>
+        <p>VinUniversity</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;">© 2026 VinUniversity. An international mobility program for collaborative learning.</p>
+    </footer>
+</body>
+</html>
