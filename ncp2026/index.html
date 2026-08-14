@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="UWA NCP Mobility Program 2026 x VinUniversity: a four-week research-based mobility program in Hanoi combining AI and cybersecurity projects with Vietnamese language and cultural activities." />
+  <link rel="canonical" href="https://edtech-vinuni.github.io/events/ncp2026/" />
+  <title>UWA NCP Mobility Program 2026 x VinUniversity</title>
+  <style>
+
+:root{
+  --ink:#121a24;
+  --muted:#5d6876;
+  --paper:#f7f5ef;
+  --white:#ffffff;
+  --accent:#b6ff3b;
+  --accent-2:#dfffa8;
+  --dark:#111821;
+  --line:#dfe3e7;
+  --radius:22px;
+  --shadow:0 18px 50px rgba(12,25,40,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+}
+a{color:inherit}
+.skip-link{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:100}
+.skip-link:focus{left:8px}
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,245,239,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(18,26,36,.08);
+}
+.nav-wrap{
+  max-width:1180px;margin:auto;padding:14px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{
+  display:flex;align-items:center;gap:15px;min-width:0;
+  text-decoration:none;font-weight:800;line-height:1.05
+}
+.brand-logos{display:flex;align-items:center;gap:13px;min-width:0}
+.uwa-lockup{
+  display:flex;align-items:center;height:50px;padding:6px 10px;
+  border-radius:12px;background:#003087;color:#fff;box-shadow:0 7px 18px rgba(0,48,135,.14)
+}
+.uwa-logo{width:138px;height:auto;display:block}
+.partner-x{font-size:20px;font-weight:500;color:#8a939e}
+.vinuni-logo{display:block;width:138px;height:auto}
+.program-label{
+  padding-left:15px;border-left:1px solid var(--line);font-size:11px;line-height:1.25;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);white-space:nowrap
+}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{text-decoration:none;font-weight:700;font-size:14px}
+.nav-links a:hover{opacity:.55}
+.menu-btn{display:none}
+.hero{
+  min-height:72vh;display:flex;align-items:center;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(182,255,59,.55), transparent 30%),
+    linear-gradient(135deg,#f7f5ef 0%,#eef4e6 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{max-width:1180px;margin:auto;padding:88px 22px 82px;width:100%}
+.eyebrow,.kicker{
+  text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900;color:#527000
+}
+h1,h2,h3{line-height:1.08;margin-top:0;letter-spacing:-.03em}
+h1{font-size:clamp(48px,8vw,104px);max-width:950px;margin-bottom:26px}
+h2{font-size:clamp(34px,4vw,58px);margin-bottom:18px}
+h3{font-size:24px}
+.lede{font-size:clamp(20px,2.1vw,28px);max-width:820px;color:#33404d}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{
+  display:inline-flex;padding:14px 19px;border-radius:999px;text-decoration:none;
+  font-weight:800;border:1px solid var(--ink)
+}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.secondary{background:transparent}
+.status-note{margin-top:32px;max-width:760px;font-size:14px;color:var(--muted)}
+.section{max-width:1180px;margin:auto;padding:90px 22px}
+.section.alt,.section.dark{max-width:none}
+.section.alt{background:#fff}
+.section.alt > *,.section.dark > *{max-width:1180px;margin-left:auto;margin-right:auto}
+.section-head{margin-bottom:42px;max-width:860px}
+.section-head p{font-size:18px;color:var(--muted)}
+.grid{display:grid;gap:22px}
+.grid.two{grid-template-columns:1.2fr .8fr}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.card.prose p{font-size:19px}
+.card.highlight{background:var(--accent-2)}
+.check-list{padding-left:1.2rem}
+.check-list li{margin:.6rem 0}
+.tracks{grid-template-columns:repeat(2,minmax(0,1fr))}
+.track-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;
+  min-height:360px;
+}
+.track-num{font-size:13px;font-weight:900;color:#718000;letter-spacing:.12em;margin-bottom:24px}
+.track-card ul{padding-left:1.1rem;color:#46515e}
+.track-card li{margin:.55rem 0}
+.outcome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.outcome{
+  display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;
+  border-top:1px solid var(--line);padding:18px 0;
+}
+.outcome span{font-weight:900;color:#718000}
+.outcome p{margin:0;font-size:18px}
+.dark{background:var(--dark);color:#fff}
+.section-head.light p{color:#b9c3cf}
+.dark .kicker{color:var(--accent)}
+.week-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.week-tab{
+  appearance:none;border:1px solid #35404e;background:transparent;color:#fff;
+  border-radius:999px;padding:10px 15px;font-weight:800;cursor:pointer
+}
+.week-tab.active{background:var(--accent);color:#111;border-color:var(--accent)}
+.week-panel{display:none;background:#18212c;border:1px solid #2a3542;border-radius:var(--radius);padding:26px}
+.week-panel.active{display:block}
+.week-panel h3{font-size:30px}
+.timeline{display:grid}
+.timeline>div{
+  display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;
+  border-top:1px solid #2b3643
+}
+.timeline time{font-weight:900;color:var(--accent)}
+.timeline p{margin:0;color:#d6dde5}
+.timeline strong{color:#fff}
+.location-grid{align-items:center}
+.location-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  background:#fff;display:flex;gap:18px;align-items:center;box-shadow:var(--shadow)
+}
+.pin{
+  flex:0 0 64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent);font-size:32px
+}
+.muted{color:var(--muted)}
+.notice{padding-top:20px}
+.notice-box{
+  background:var(--ink);color:#fff;border-radius:var(--radius);padding:34px
+}
+.notice-box p{color:#d3dbe3;max-width:900px}
+footer{
+  max-width:1180px;margin:auto;padding:35px 22px 50px;
+  border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px
+}
+footer p{margin:5px 0 0;color:var(--muted)}
+footer a{font-weight:800}
+@media (max-width:1050px){
+  .nav-links{
+    display:none;position:absolute;left:14px;right:14px;top:76px;padding:18px;
+    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    flex-direction:column;align-items:flex-start
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block;border:1px solid var(--ink);background:transparent;border-radius:999px;padding:8px 13px;font-weight:800}
+}
+@media (max-width:760px){
+  .grid.two,.tracks,.outcome-grid{grid-template-columns:1fr}
+  h1{font-size:52px}
+  .hero{min-height:auto}
+  .hero-inner{padding-top:64px}
+  .section{padding:68px 18px}
+  .timeline>div{grid-template-columns:1fr;gap:4px}
+  footer{flex-direction:column}
+}
+@media (max-width:620px){
+  .nav-wrap{padding:10px 14px;gap:10px}
+  .brand{gap:10px}
+  .brand-logos{gap:8px}
+  .uwa-lockup{height:42px;padding:5px 7px}
+  .uwa-logo{width:98px}
+  .partner-x{font-size:17px}
+  .vinuni-logo{width:104px}
+  .program-label{display:none}
+  .nav-links{top:68px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+  
+.hero-inner{position:relative}
+.hero-photo{
+  width:min(100%,1180px);height:clamp(260px,34vw,430px);margin:0 0 52px;
+  border-radius:30px;
+  background:
+    linear-gradient(180deg,rgba(17,24,33,.02),rgba(17,24,33,.18)),
+    url("assets/images/halong-hero.webp") center 52%/cover no-repeat;
+  box-shadow:0 24px 70px rgba(17,24,33,.16);
+}
+.photo-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:310px 310px;gap:16px;
+}
+.photo-card{position:relative;margin:0;border-radius:24px;overflow:hidden;background:#e5e8e3}
+.photo-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.photo-card:hover img{transform:scale(1.025)}
+.photo-campus{grid-row:span 2}
+.photo-card figcaption{
+  position:absolute;left:14px;right:14px;bottom:14px;padding:14px 16px;border-radius:15px;
+  background:rgba(11,17,24,.76);backdrop-filter:blur(10px);color:#fff;
+  display:flex;justify-content:space-between;gap:14px;align-items:center
+}
+.photo-card figcaption strong{font-size:17px}
+.photo-card figcaption span{font-size:13px;color:#dce4e8;text-align:right}
+.image-credit{font-size:12px;color:var(--muted);margin-top:12px}
+.lead-initials{
+  width:70px;height:70px;border-radius:18px;background:var(--ink);color:var(--accent);
+  display:grid;place-items:center;font-size:22px;font-weight:900;letter-spacing:.04em
+}
+.institution{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#718000}
+@media (max-width:760px){
+  .hero-photo{height:280px;margin-bottom:36px;border-radius:22px}
+  .photo-grid{grid-template-columns:1fr;grid-template-rows:none}
+  .photo-campus{grid-row:auto}
+  .photo-card{height:270px}
+  .photo-card figcaption{align-items:flex-start;flex-direction:column;gap:2px}
+  .photo-card figcaption span{text-align:left}
+}
+
+
+
+/* Academic leadership component: independent from .grid.two */
+.lead-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:22px;
+  align-items:stretch;
+  width:100%;
+}
+.lead-card{
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:78px minmax(0,1fr);
+  gap:22px;
+  min-width:0;
+  width:100%;
+  height:100%;
+  padding:28px;
+  align-items:start;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.lead-card > div:last-child{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  height:100%;
+}
+.lead-card h3{
+  margin:7px 0 8px;
+}
+.lead-card .role{
+  margin:0 0 14px;
+  font-weight:800;
+  color:#384451;
+}
+.lead-card > div:last-child > p:not(.role){
+  margin:0 0 14px;
+}
+.lead-card .profile-link{
+  display:inline-flex;
+  align-self:flex-start;
+  margin-top:auto;
+  font-weight:900;
+  text-decoration:none;
+  border-bottom:1px solid currentColor;
+}
+@media (max-width:760px){
+  .lead-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+  .lead-card{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Program home">
+        <span class="brand-logos" aria-hidden="true">
+          <span class="uwa-lockup">
+            <img class="uwa-logo" src="assets/images/uwa-crest.svg" alt="">
+          </span>
+          <span class="partner-x">×</span>
+          <img class="vinuni-logo" src="assets/images/vinuni-logo.webp" alt="">
+        </span>
+        <span class="program-label">NCP Mobility<br>Program 2026</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div id="nav-links" class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#research">Research</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#program">Program</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#location">Location</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="hero-inner">
+        <div class="hero-photo" role="img" aria-label="Ha Long Bay, Vietnam"></div>
+        <div class="eyebrow">16 November – 12 December 2026 · Hanoi, Vietnam</div>
+        <h1>Research. Collaborate. Experience Vietnam.</h1>
+        <p class="lede">A four-week research-based mobility program where UWA and VinUniversity students work on AI and cybersecurity projects alongside Vietnamese language and cultural activities.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#program">View program</a>
+          <a class="btn secondary" href="#research">Explore research tracks</a>
+        </div>
+        <p class="status-note">Program details are indicative and may be updated as planning is finalised.</p>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="section-head">
+        <span class="kicker">Program overview</span>
+        <h2>A research-led international experience</h2>
+      </div>
+      <div class="grid two">
+        <div class="card prose">
+          <p>Students work individually or in small teams on AI-related projects. The program combines an introductory session, independent research, mentoring and regular progress discussions.</p>
+          <p>Students define a research question, review relevant work, develop an appropriate method, evaluate their results and present their findings.</p>
+        </div>
+        <div class="card highlight">
+          <h3>Program at a glance</h3>
+          <ul class="check-list">
+            <li>Independent and collaborative research</li>
+            <li>Collaboration with VinUniversity students</li>
+            <li>Vietnamese language classes</li>
+            <li>Industry visits and cultural activities</li>
+            <li>Final research presentations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section alt">
+      <div class="section-head">
+        <span class="kicker">Research</span>
+        <h2>Four research tracks</h2>
+        <p>Students may select from suggested topics, adapt or combine existing ideas, or propose another relevant topic. Project scope and activities may vary depending on students' backgrounds, interests, available resources and research progress.</p>
+      </div>
+
+      <div class="grid tracks">
+        <article class="track-card">
+          <div class="track-num">01</div>
+          <h3>Trustworthy &amp; Multilingual AI</h3>
+          <ul>
+            <li>CJKV reasoning and factuality benchmark</li>
+            <li>Vietnamese hallucination and factuality evaluation</li>
+            <li>Vietnamese negation, exceptions and logical reasoning</li>
+            <li>Cultural and social reasoning in Vietnamese</li>
+            <li>Confidence calibration across Chinese, Japanese, Korean and Vietnamese</li>
+            <li>Evidence-grounded question answering in Vietnamese</li>
+          </ul>
+        </article>
+
+        <article class="track-card">
+          <div class="track-num">02</div>
+          <h3>AI/LLM Security &amp; Trustworthy Cyber Reasoning</h3>
+          <ul>
+            <li>Veracity validation for LLM-generated cyberattack narratives</li>
+            <li>Evidence-grounded cyber incident reconstruction</li>
+            <li>Hallucination detection in cybersecurity reports</li>
+            <li>Consistency checking for attack narratives</li>
+            <li>Uncertainty-aware cyber investigation assistants</li>
+            <li>Provenance and audit trails for LLM-based cyber analysis</li>
+            <li>Vietnamese or multilingual prompt injection benchmarks</li>
+            <li>Safety checking before an AI agent executes an action</li>
+          </ul>
+        </article>
+
+        <article class="track-card">
+          <div class="track-num">03</div>
+          <h3>Vietnamese Language Data &amp; EdTech</h3>
+          <ul>
+            <li>Vietnamese learner error corpus</li>
+            <li>Vietnamese pronunciation and tone dataset</li>
+            <li>Vietnamese code-switching dataset</li>
+            <li>Vietnamese pronouns, social hierarchy and forms of address</li>
+            <li>CJKV parallel cultural corpus</li>
+            <li>Vietnamese navigation and everyday instruction dataset</li>
+            <li>AI-assisted feedback for Vietnamese language learners</li>
+            <li>Evaluation of LLMs as Vietnamese language tutors</li>
+          </ul>
+        </article>
+
+        <article class="track-card">
+          <div class="track-num">04</div>
+          <h3>Digital Twin, Cybersecurity &amp; Privacy</h3>
+          <ul>
+            <li>Cyber digital twin of a university campus</li>
+            <li>Attack-graph-based security simulation</li>
+            <li>Moving Target Defense simulation</li>
+            <li>Digital twin for testing AI agent security</li>
+            <li>Privacy-preserving Vietnamese language learning</li>
+            <li>Federated learning across universities or countries</li>
+            <li>Privacy and security evaluation of educational AI systems</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="section visual-section">
+      <div class="section-head">
+        <span class="kicker">Beyond the classroom</span>
+        <h2>Learning beyond the classroom</h2>
+        <p>Alongside research, students take part in Vietnamese language classes, collaborate with VinUniversity students, and join cultural activities in Hanoi and northern Vietnam.</p>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo-card photo-campus">
+          <img src="assets/images/vinuni-campus.webp" alt="Illustrative university campus scene" loading="lazy">
+          <figcaption><strong>Campus life</strong><span>Program base: VinUniversity</span></figcaption>
+        </figure>
+        <figure class="photo-card photo-activity">
+          <img src="assets/images/research-collaboration.webp" alt="Illustrative student research collaboration scene" loading="lazy">
+          <figcaption><strong>Research collaboration</strong><span>Independent and team-based project work</span></figcaption>
+        </figure>
+        <figure class="photo-card photo-hanoi">
+          <img src="assets/images/hanoi-culture.webp" alt="Illustrative Hanoi city scene" loading="lazy">
+          <figcaption><strong>Hanoi</strong><span>Language and cultural activities</span></figcaption>
+        </figure>
+        <figure class="photo-card photo-halong">
+          <img src="assets/images/halong-bay.webp" alt="Illustrative Ha Long Bay landscape" loading="lazy">
+          <figcaption><strong>Ha Long Bay</strong><span>Excursion in northern Vietnam</span></figcaption>
+        </figure>
+      </div>
+      <p class="image-credit">Images are illustrative.</p>
+    </section>
+
+    <section id="outcomes" class="section">
+      <div class="section-head">
+        <span class="kicker">Program outcomes</span>
+        <h2>Expected project outcomes</h2>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome"><span>01</span><p>A clearly defined research question</p></div>
+        <div class="outcome"><span>02</span><p>A review of relevant academic or technical work</p></div>
+        <div class="outcome"><span>03</span><p>A proposed methodology and evaluation approach</p></div>
+        <div class="outcome"><span>04</span><p>A prototype, dataset, benchmark, model, experiment or analytical study</p></div>
+        <div class="outcome"><span>05</span><p>Research findings and discussion</p></div>
+        <div class="outcome"><span>06</span><p>A final project presentation</p></div>
+        <div class="outcome"><span>07</span><p>A technical report covering background, approach, results, limitations and future work</p></div>
+      </div>
+    </section>
+
+    <section id="program" class="section dark">
+      <div class="section-head light">
+        <span class="kicker">Indicative program</span>
+        <h2>Four weeks in Hanoi</h2>
+        <p>The schedule below highlights the main activities planned for each week.</p>
+      </div>
+
+      <div class="week-tabs" role="tablist" aria-label="Program weeks">
+        <button class="week-tab active" data-week="1" role="tab" aria-selected="true">Week 1</button>
+        <button class="week-tab" data-week="2" role="tab" aria-selected="false">Week 2</button>
+        <button class="week-tab" data-week="3" role="tab" aria-selected="false">Week 3</button>
+        <button class="week-tab" data-week="4" role="tab" aria-selected="false">Week 4</button>
+      </div>
+
+      <div class="week-panel active" data-panel="1">
+        <h3>16–22 November · Arrival &amp; launch</h3>
+        <div class="timeline">
+          <div><time>Mon–Tue</time><p><strong>Arrival in Hanoi</strong><br>Students arrive in Hanoi and settle in.</p></div>
+          <div><time>Wed</time><p><strong>Campus tour and opening</strong><br>Campus tour, opening ceremony, program overview, Vietnamese class and welcome dinner.</p></div>
+          <div><time>Thu</time><p><strong>Research briefing and collaboration</strong><br>Project briefing, meeting with VinUniversity student collaborators, and Vietnamese class.</p></div>
+          <div><time>Fri</time><p><strong>Project day</strong><br>Research work and self-directed collaboration.</p></div>
+          <div><time>Sat</time><p><strong>Hanoi city tour</strong><br>Cultural visits and activities in central Hanoi.</p></div>
+          <div><time>Sun</time><p><strong>Free time</strong></p></div>
+        </div>
+      </div>
+
+      <div class="week-panel" data-panel="2">
+        <h3>23–29 November · Language, research &amp; Ha Long Bay</h3>
+        <div class="timeline">
+          <div><time>Mon</time><p><strong>Vietnamese class, research and cultural exchange</strong><br>Vietnamese class, research or self-study, and cultural exchange with VinUniversity students.</p></div>
+          <div><time>Tue</time><p><strong>Project day</strong></p></div>
+          <div><time>Wed</time><p><strong>Food tour and Vietnamese class</strong><br>Off-campus food tour followed by Vietnamese class.</p></div>
+          <div><time>Thu</time><p><strong>Project day</strong></p></div>
+          <div><time>Fri</time><p><strong>Yen Duc Village and Ha Long Bay</strong><br>Full-day cultural excursion and Ha Long Bay cruise.</p></div>
+          <div><time>Weekend</time><p><strong>Free time</strong></p></div>
+        </div>
+      </div>
+
+      <div class="week-panel" data-panel="3">
+        <h3>30 November–6 December · Research, industry &amp; culture</h3>
+        <div class="timeline">
+          <div><time>Mon</time><p><strong>Vietnamese and cooking class</strong><br>Vietnamese class and cooking class with VinUniversity students.</p></div>
+          <div><time>Tue</time><p><strong>Project day</strong></p></div>
+          <div><time>Wed</time><p><strong>Industry visit</strong><br>Company visit; host to be confirmed.</p></div>
+          <div><time>Thu</time><p><strong>Project day</strong></p></div>
+          <div><time>Fri</time><p><strong>Vietnamese and Bat Trang Pottery Village</strong><br>Vietnamese class followed by a visit to Bat Trang Pottery Village.</p></div>
+          <div><time>Weekend</time><p><strong>Free time</strong></p></div>
+        </div>
+      </div>
+
+      <div class="week-panel" data-panel="4">
+        <h3>7–12 December · Research, exchange &amp; presentations</h3>
+        <div class="timeline">
+          <div><time>Mon</time><p><strong>Industry visit and research</strong><br>Hanoi-based company visit followed by research or self-study.</p></div>
+          <div><time>Tue</time><p><strong>Project day</strong></p></div>
+          <div><time>Wed</time><p><strong>Industry visit and language exchange</strong><br>Company visit followed by Vietnamese-English exchange with VinUniversity students.</p></div>
+          <div><time>Thu</time><p><strong>Vietnamese wrap-up and presentation preparation</strong><br>Course wrap-up and final assessment, followed by presentation preparation.</p></div>
+          <div><time>Fri</time><p><strong>Final research presentations</strong><br>Presentations to UWA and VinUniversity faculty and students, followed by a farewell dinner and certificate ceremony.</p></div>
+          <div><time>Sat</time><p><strong>Check-out and departure</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="leadership" class="section leadership-section">
+      <div class="section-head">
+        <span class="kicker">Academic leadership</span>
+        <h2>Program leads</h2>
+        <p>Dr Jin Hong from UWA and Dr Nguyen Ha Thanh from VinUniversity lead the program's research activities.</p>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card">
+          <div class="lead-initials" aria-hidden="true">JH</div>
+          <div>
+            <span class="institution">The University of Western Australia</span>
+            <h3>Dr Jin Hong</h3>
+            <p class="role">Program Lead · Senior Lecturer, Computer Science and Software Engineering</p>
+            <p>His research includes security modelling and analysis, moving target defense, privacy-preserving techniques, security and robotics, and cybersecurity education.</p>
+            <a class="profile-link" href="https://research-repository.uwa.edu.au/en/persons/jin-hong/" target="_blank" rel="noopener noreferrer">Official UWA profile ↗</a>
+          </div>
+        </article>
+        <article class="lead-card">
+          <div class="lead-initials" aria-hidden="true">NT</div>
+          <div>
+            <span class="institution">VinUniversity</span>
+            <h3>Dr Nguyen Ha Thanh</h3>
+            <p class="role">Program Lead · Assistant Professor of AI/Machine Learning</p>
+            <p>His research focuses on language models for reasoning and decision systems, knowledge representation and automated reasoning, AI for institutional decision-making, explainable and governance-aware AI, and natural language understanding.</p>
+            <a class="profile-link" href="https://vinuni.edu.vn/people/nguyen-ha-thanh/" target="_blank" rel="noopener noreferrer">Official VinUniversity profile ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="location" class="section">
+      <div class="grid two location-grid">
+        <div>
+          <span class="kicker">Location</span>
+          <h2>Hosted at VinUniversity in Hanoi</h2>
+          <p>The program is based at VinUniversity in Hanoi, with selected industry and cultural activities taking place elsewhere in Hanoi and northern Vietnam.</p>
+        </div>
+        <div class="location-card" aria-label="Program location summary">
+          <div class="pin">⌖</div>
+          <div>
+            <strong>VinUniversity</strong>
+            <p>Hanoi, Vietnam</p>
+            <p class="muted">Primary program base</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>UWA NCP Mobility Program 2026 × VinUniversity</strong>
+      <p>Research-based student mobility in AI, cybersecurity, language and culture.</p>
+    </div>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+  <script>
+
+const menuButton = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+if (menuButton) {
+  menuButton.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const tabs = [...document.querySelectorAll('.week-tab')];
+const panels = [...document.querySelectorAll('.week-panel')];
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const week = tab.dataset.week;
+    tabs.forEach(t => {
+      const active = t === tab;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+    panels.forEach(p => p.classList.toggle('active', p.dataset.panel === week));
+  });
+});
+
+  </script>
+</body>
+</html>
