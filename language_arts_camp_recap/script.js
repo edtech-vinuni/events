@@ -18,7 +18,7 @@ function renderGallery() {
   grid.innerHTML = Array.from({ length: 42 }, (_, index) => {
     const number = index + 1;
     const padded = String(number).padStart(2, '0');
-    return `<button class="photo-card" type="button" data-photo="${padded}" aria-label="${photoLabel(number)}"><img src="media/${padded}.jpg" alt="${photoLabel(number)}" loading="lazy" /><span>${padded} / 42</span></button>`;
+    return `<button class="photo-card" type="button" data-photo="${padded}" aria-label="${photoLabel(number)}"><img src="media/${padded}.webp" alt="${photoLabel(number)}" loading="lazy" /><span>${padded} / 42</span></button>`;
   }).join('');
 }
 function applyLanguage(nextLanguage) {
@@ -29,7 +29,7 @@ function applyLanguage(nextLanguage) {
   renderGallery();
 }
 document.querySelectorAll('.lang-btn').forEach((button) => button.addEventListener('click', () => applyLanguage(button.dataset.lang)));
-grid.addEventListener('click', (event) => { const card = event.target.closest('.photo-card'); if (!card) return; const number = Number(card.dataset.photo); dialogImage.src = `media/${card.dataset.photo}.jpg`; dialogImage.alt = photoLabel(number); dialogCaption.textContent = photoLabel(number); dialog.showModal(); });
+grid.addEventListener('click', (event) => { const card = event.target.closest('.photo-card'); if (!card) return; const number = Number(card.dataset.photo); dialogImage.src = `media/${card.dataset.photo}.webp`; dialogImage.alt = photoLabel(number); dialogCaption.textContent = photoLabel(number); dialog.showModal(); });
 document.querySelector('#close-lightbox').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 applyLanguage(language);
